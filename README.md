@@ -10,5 +10,4 @@
 		description varchar(500) ---- 项目描述
 		url varchar(100) ---- 项目链接
 		star smallint ---- 项目获得的star数
-=======
->>>>>>> e821f87145e90281b6158e93d9657e06ec01a883
+
