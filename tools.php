@@ -68,6 +68,7 @@
                 else
                 {
                     echo "<p>无结果</p>";
+					echo "<hr style=\"height:5px;border:none;border-top:10px groove skyblue;\" />";
                 }
                 $conn->close();
             }
