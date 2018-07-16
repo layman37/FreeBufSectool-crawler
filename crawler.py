@@ -82,6 +82,17 @@ browser.set_script_timeout(10)
 count=0
 print("开始...")
 db=pymysql.connect("localhost","root","","crawler") #链接数据库
+cursor=db.cursor()
+sql="""CREATE TABLE project(
+       title VARCHAR(100) PRIMARY KEY,
+       description VARCHAR(500),
+       url VARCHAR(100),
+       star SMALLINT)"""
+try:
+    cursor.execute(sql)
+    db.commit()
+except:
+    db.rollback()
 browser.get(homepage)
 wait = WebDriverWait(browser, 10)
 element = wait.until(expected_conditions.presence_of_element_located((By.CLASS_NAME, "article-title")))
