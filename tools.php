@@ -18,8 +18,8 @@
     {
         $array=array();
         $coon=mysqli_connect("localhost","root","","crawler");
-		$sql="set names utf8";
-		$r=mysqli_query($coon,$sql);
+		$s="set names utf8";
+		$r=mysqli_query($coon,$s);
         $sql="select * from project limit ".(($pageNum-1)*$pageSize).",".$pageSize;
         $r=mysqli_query($coon,$sql);
         while($obj=mysqli_fetch_object($r))
@@ -49,8 +49,8 @@
             if(isset($_GET['title']))
             {
                 $conn=mysqli_connect("localhost","root","","crawler");
-				$sql="set names utf8";
-				$r=$conn->query($sql);
+				$s="set names utf8";
+				$r=$conn->query($s);
                 $sql="select * from project where title like '%".$_GET['title']."%'";
                 $r=$conn->query($sql);
                 if($r->num_rows>0)
