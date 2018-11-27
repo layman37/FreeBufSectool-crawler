@@ -15,7 +15,7 @@ app = Flask(__name__)
 @app.route('/wx',methods=['GET','POST'])
 def wechat():
         if request.method=='GET':
-		token='bakertest'
+		token='****'
 		data=request.args
             	signature=data.get('signature','')
             	timestamp=data.get('timestamp','')
@@ -32,7 +32,7 @@ def wechat():
 		except InvalidSignatureException:
 			return ""
 		if msg.type=='text':
-			retmsg=[{"title": "检索结果","image": "http://119.29.169.143:8080/cry.jpg", "url": u"http://119.29.169.143:8080/tools.php?title="+msg.content},]
+			retmsg=[{"title": "检索结果","image": "http://*.*.*.*:*/*.jpg", "url": u"http://*.*.*.*:*/*.php?title="+msg.content},]
 			reply = ArticlesReply(message=msg, articles=retmsg)
 			return reply.render()
 		if msg.type=='image':
