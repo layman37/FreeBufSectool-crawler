@@ -7,7 +7,7 @@
     <?php
     function pagesCount()//返回总记录数
     {
-        $coon=mysqli_connect("localhost","root","","crawler");
+        $coon=mysqli_connect("localhost","*","*","*");
         $sql="select count(*) num from project";
         $r=mysqli_query($coon,$sql);
         $obj=mysqli_fetch_object($r);
@@ -17,7 +17,7 @@
     function news($pageNum,$pageSize) //返回当前页面结果
     {
         $array=array();
-        $coon=mysqli_connect("localhost","root","","crawler");
+        $coon=mysqli_connect("localhost","*","*","*");
 		$s="set names utf8";
 		$r=mysqli_query($coon,$s);
         $sql="select * from project limit ".(($pageNum-1)*$pageSize).",".$pageSize;
@@ -48,7 +48,7 @@
             <?php
             if(isset($_GET['title']))
             {
-                $conn=mysqli_connect("localhost","root","","crawler");
+                $conn=mysqli_connect("localhost","*","*","*");
 				$s="set names utf8";
 				$r=$conn->query($s);
                 $sql="select * from project where title like '%".$_GET['title']."%'";
